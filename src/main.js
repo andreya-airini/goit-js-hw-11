@@ -1,5 +1,5 @@
 import { getImagesByQuery } from './js/pixabay-api';
-import { renderGallery, showLoader, hideLoader } from './js/render-functions.js';
+import { renderGallery, showLoader, hideLoader,  clearGallery } from './js/render-functions.js';
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
@@ -11,7 +11,7 @@ form.addEventListener('submit', async (e) => {
 
 const query = form.elements['search-text'].value.trim();
     
- gallery.innerHTML = '';
+  clearGallery();
 
   if (!query) {
     iziToast.warning({
